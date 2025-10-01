@@ -7,6 +7,8 @@ const instance = axios.create({
   timeout: 120000,
 })
 
+console.log(import.meta.env.API_BASE_URL);
+
 
 export async function removeBackground(file, onUploadProgress) {
   const form = new FormData()
