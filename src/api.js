@@ -3,7 +3,7 @@ import axios from 'axios'
 // Adjust this to your real backend base URL if needed
 
 const instance = axios.create({
-  baseURL: import.meta.env.API_BASE_URL || 'https://georgia-synagogical-darcy.ngrok-free.dev ',
+  baseURL: import.meta.env.API_BASE_URL || '',
   timeout: 120000,
 })
 
