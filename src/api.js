@@ -3,11 +3,10 @@ import axios from 'axios'
 // Adjust this to your real backend base URL if needed
 
 const instance = axios.create({
-  baseURL: import.meta.env.API_BASE_URL || '',
+  baseURL: 'https://georgia-synagogical-darcy.ngrok-free.dev',
   timeout: 120000,
 })
 
-console.log(import.meta.env.API_BASE_URL);
 
 
 export async function removeBackground(file, onUploadProgress) {
