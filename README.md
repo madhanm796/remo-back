@@ -1,20 +1,81 @@
-# React + Vite
+# Image Background Remover — React + Tailwind Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **modern, responsive frontend** for an image background removal app. It connects to your backend API (which handles the AI image processing) and provides users with a clean interface to upload, preview, and download processed images.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡ Built with **React + Vite** for fast performance
+- 🎨 **Tailwind CSS** for styling, mobile-first responsive UI
+- 🎬 **Framer Motion** animations
+- 📤 Drag & drop or click to upload images
+- 🖼️ Side-by-side preview (original & result)
+- ⏳ Loading state with progress indicator
+- ⬇️ One-click **download PNG with transparent background**
+- 📢 Ad sidebar (Google AdSense-ready)
+- 🛡️ Error handling for invalid files / API errors
 
-## React Compiler
+## 🛠️ Getting Started
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Clone and install dependencies
+```bash
+git clone <your-repo-url>
+cd bg-remover-frontend
+npm install
+```
 
-## Expanding the ESLint configuration
+### 2. Start development server
+```bash
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open `http://localhost:5173` in your browser.
 
-## Create README
+### 3. Configure backend API
+- Edit `src/api.js`
+- Set your backend `baseURL`
+- Ensure your backend exposes `POST /remove-bg`
+  - Accepts `multipart/form-data` with field: **image**
+  - Returns: **PNG blob with transparent background**
 
-This project was bootstrapped with [Create Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project). For more information, visit the [Vite documentation](https://vitejs.dev/guide/).
+### 4. Build for production
+```bash
+npm run build
+```
+
+This outputs static files to `dist/`, ready to deploy on **Netlify, Vercel, Render, or any static hosting**.
+
+## 📂 Project Structure
+```
+src/
+ ├─ App.jsx          # Main layout
+ ├─ api.js           # API connection
+ ├─ components/      # UI components (UploadArea, Preview, Header, Ads, Footer)
+ ├─ index.css        # Tailwind base styles
+ └─ main.jsx         # Entry point
+```
+
+## 📦 Tech Stack
+- React 18
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Axios
+
+## 📢 Ads Integration
+To add Google AdSense:
+1. Insert your AdSense script into `index.html` inside `<head>`
+2. Replace placeholders inside `AdsSidebar.jsx`
+
+## ⚠️ Notes
+- This repo is **frontend only** — you must provide your own backend for background removal.
+- Works best with **high-resolution images**.
+- Tested on Chrome, Firefox, and Edge.
+
+---
+
+### 🚀 Next Steps
+- Connect to your backend and test image uploads.
+- Deploy on Netlify or Vercel.
+- Add branding, SEO, and analytics as needed.
+
+Enjoy building your **AI-powered background remover** ✨
